@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
 
+import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
@@ -26,7 +27,7 @@ export class RecipeEditComponent implements OnInit {
         }
       );
   }
-  get controls() { 
+  get controls() { // a getter!
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
   onSubmit() {
