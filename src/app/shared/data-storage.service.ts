@@ -26,18 +26,8 @@ export class DataStorageService {
       .get<Recipe[]>(
         'https://recipe-47602-default-rtdb.firebaseio.com/recipes.json'
       )
-      .pipe(
-        map(recipes => {
-          return recipes.map(recipe => {
-            return {
-              ...recipe,
-              ingredients: recipe.ingredients ? recipe.ingredients : []
-            };
-          });
-        })
-      )
       .subscribe(recipes => {
-        this.recipeService.setRecipes(recipes);
+        console.log(recipes);
       });
   }
 }

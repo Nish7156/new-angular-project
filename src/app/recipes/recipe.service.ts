@@ -6,7 +6,7 @@ import { Recipe } from "./recipe.model";
 @Injectable()
 export class RecipeService {
     setRecipes(recipes: { ingredients: Ingredient[]; name: string; description: string; imagePath: string; }[]) {
-        throw new Error('Method not implemented.');
+      throw new Error('Method not implemented.');
     }
     recipesChanged = new Subject<Recipe[]>();
     private recipes: Recipe[] = [
